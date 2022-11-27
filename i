@@ -45,9 +45,9 @@ jum=$(cat /tmp/ipvmess.txt)
 if [[ -z "$jum" ]]; then
 echo > /dev/null
 else
-jum3=$(cat /tmp/ipvmess.txt | nl)
+jum2=$(cat /tmp/ipvmess.txt | nl)
 echo -e "$COLOR1│${NC} user : $akun";
-echo -e "$COLOR1│${NC} $jum3";
+echo -e "$COLOR1│${NC} $jum2";
 fi
 rm -rf /tmp/ipvmess.txt
 done
