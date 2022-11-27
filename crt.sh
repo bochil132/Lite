@@ -1,4 +1,4 @@
-domain=(cat /etc/xray/domain)
+domain=$(cat /etc/xray/domain)
 
 
 echo -e "[ ${red}WARNING${NC} ] Detected port 80 used by $Cek " 
