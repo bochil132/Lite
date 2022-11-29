@@ -3,7 +3,7 @@
 # Color
 RED='\033[0;31m'
 NC='\033[0m'
-#GREEN='\033[0;32m'
+GREEN='\033[0;32m'
 #ORANGE='\033[0;33m'
 BLUE='\033[0;34m'
 PURPLE='\033[0;35m'
@@ -46,7 +46,7 @@ echo -e "$Pass\n$Pass\n"|passwd $Login &> /dev/null
 echo -e ""
 TEXT="
 Thank You For Using Our Service
-Informasi SSH & OpenVPN
+Informasi SSH OpenVPN
 ==============================
 Username : $Login
 Password : $Pass
@@ -56,11 +56,11 @@ Expired On : $expi
 ✓Detail Port SSH & OpenVPN✓
 ==============================
 Domain SSH : ${domain}
-IP / Host : $IP
+IP Host : $IP
 Ssh Websocket TLS : $ws
 Ssh Websocket NTLS : $ws2
 Dropbear : 109, 143
-SSL / TLS :$ssl
+SSL TLS :$ssl
 Port Squid :$sqd
 OHP SSH : 8181
 OHP Dropbear : 8282
