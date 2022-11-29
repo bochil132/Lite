@@ -45,15 +45,15 @@ expi=`date -d "$masaaktif days" +"%Y-%m-%d"`
 echo -e "$Pass\n$Pass\n"|passwd $Login &> /dev/null
 echo -e ""
 TEXT="
-Thank You For Using Our Service
-Informasi SSH OpenVPN
+**Thank You For Using Our Service**
+**Informasi SSH OpenVPN**
 ==============================
 Username : $Login
 Password : $Pass
 Created On : $hariini
 Expired On : $expi
 ==============================
-✓Detail Port SSH OpenVPN✓
+**✓Detail Port SSH OpenVPN✓**
 ==============================
 Domain SSH : ${domain}
 IP Host : $IP
@@ -69,7 +69,7 @@ OpenVPN Websocket : 2086
 OpenVPN SSL : 990
 BadVpn UDPGW : 7100-7200-7300
 ==============================
-✓Link Config OpenVPN✓
+**✓Link Config OpenVPN✓**
 ==============================
 TCP : http://${domain}:89/tcp.ovpn
 UDP : http://${domain}:89/udp.ovpn
