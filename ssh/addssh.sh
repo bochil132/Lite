@@ -73,7 +73,7 @@ Domain SSH : ${domain}
 IP Host : $IP
 Ssh Websocket TLS : $ws
 Ssh Websocket NTLS : $ws2
-Dropbear : 109 & 143
+Dropbear : 109 dan 143
 SSL TLS :$ssl
 Port Squid :$sqd
 OHP SSH : 8181
