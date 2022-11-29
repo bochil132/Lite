@@ -53,7 +53,7 @@ Password : $Pass
 Created On : $hariini
 Expired On : $expi
 ==============================
-✓Detail Port SSH & OpenVPN✓
+✓Detail Port SSH OpenVPN✓
 ==============================
 Domain SSH : ${domain}
 IP Host : $IP
