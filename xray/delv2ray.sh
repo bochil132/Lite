@@ -43,12 +43,12 @@ rm -f /etc/xray/vmess-$user-tls.json /etc/xray/vmess-$user-nontls.json
 systemctl restart xray.service
 clear
 echo ""
-echo "${BLUE}===============================${NC}"
+echo "==============================="
 echo "  XRAYS/Vmess Account Deleted  "
-echo "${BLUE}===============================${NC}"
+echo "==============================="
 echo "Username  : $user"
 echo "Expired   : $exp"
-echo "${BLUE}===============================${NC}"
+echo "==============================="
 echo -e ""
 read -n 1 -s -r -p "Press any key to back on menu"
 menu
