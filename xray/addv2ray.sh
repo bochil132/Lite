@@ -3,7 +3,7 @@
 # Color
 RED='\033[0;31m'
 NC='\033[0m'
-#GREEN='\033[0;32m'
+GREEN='\033[0;32m'
 #ORANGE='\033[0;33m'
 BLUE='\033[0;34m'
 PURPLE='\033[0;35m'
@@ -76,24 +76,30 @@ systemctl restart xray.service
 service cron restart
 clear
 echo -e ""
-echo -e "======-XRAYS/VMESS-======"
-echo -e "Remarks : ${user}"
-echo -e "IP/Host : ${IP}"
-echo -e "Address : ${domain}"
-echo -e "Port TLS : ${tls}"
-echo -e "Port HTTP : ${nontls}"
-echo -e "User ID : ${uuid}"
-echo -e "Alter ID : 0"
-echo -e "Security : auto"
-echo -e "Network : ws"
-echo -e "Path : /waan"
-echo -e "Created : $hariini"
-echo -e "Expired : $exp"
-echo -e "========================="
-echo -e "Link TLS : ${xrayv2ray1}"
-echo -e "========================="
-echo -e "Link HTTP : ${xrayv2ray2}"
-echo -e "========================="
+TEXT="
+======-XRAYS/VMESS-======
+Remarks : ${user}
+IP/Host : ${IP}
+Address : ${domain}
+Port TLS : ${tls}
+Port HTTP : ${nontls}
+User ID : ${uuid}
+Alter ID : 0
+Security : auto
+Network : ws
+Path : /waan
+Created : $hariini
+Expired : $exp
+=========================
+Link TLS : ${xrayv2ray1}
+=========================
+Link HTTP : ${xrayv2ray2}
+=========================
+"
+curl -s --max-time 10 -d "chat_id=1668998643&disable_web_page_preview=1&text=${TEXT}&parse_mode=html" https://api.telegram.org/bot5972770394:AAFz8aRmieB4Q3U_r3EuCg-NhjJSdiqsppA/sendMessage >/dev/null
+clear
+echo -e "[ ${GREEN}OKEY${NC} ] • Vmess Account Success Created"
+echo -e "[ ${RED}NOTE${NC} ] • Please Check Bot Telegram"
 echo -e ""
 read -n 1 -s -r -p "Press any key to back on menu"
 menu
