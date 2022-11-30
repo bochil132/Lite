@@ -91,7 +91,7 @@ User ID : ${uuid}
 Alter ID : 0
 Security : auto
 Network : ws
-Path : /waan
+Path : /worryfree
 Created : $hariini
 Expired : $exp
 =========================
