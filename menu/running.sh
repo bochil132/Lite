@@ -55,6 +55,7 @@ ohr=$(systemctl status ssh-ohp | grep Active | awk '{print $3}' | cut -d "(" -f2
 
 # COLOR VALIDATION
 RED='\033[0;31m'
+GREEN='\033[0;32m'
 NC='\033[0m'
 green='\033[0;32m'
 ORANGE='\033[0;33m'
@@ -269,6 +270,10 @@ fi
 clear
 
 echo -e ""
+cpu=$( awk -F: '/model name/ {name=$2} END {print name}' /proc/cpuinfo )
+core=$( awk -F: '/model name/ {core++} END {print core}' /proc/cpuinfo )
+ct=$(curl -s ipinfo.io/city )
+sp=$(curl -s ipinfo.io/org | cut -d " " -f 2-10 )
 tram=$( free -m | awk 'NR==2 {print $2}' )
 uram=$( free -m | awk 'NR==2 {print $3}' )
 IPVPS=$(curl -s ipinfo.io/ip )
@@ -276,27 +281,32 @@ DOMAIN=$(cat /etc/xray/domain)
 echo -e ""
 echo -e " Current Domain      = $DOMAIN"
 echo -e " Current IP VPS      = $IPVPS"
+echo -e " Your Isp Vps        = $sp"
+echo -e " Your City Vps       = $ct"
+echo -e " OS Version          = "`hostnamectl | grep "Operating System" | cut -d ' ' -f5-`
+echo -e " Number Of Cores     = $core Core"
+echo -e " System Uptime       = $up"
+echo -e " Cpu Model           = $cpu"
 echo -e " Total Ram           = $tram MB / Used $uram MB"
 echo -e " Available Storage   = $(df -h / | awk '{print $4}' | tail -n1 | sed 's/G//g' | sed 's/ //g') GB"
 echo -e " Total Storage       = $(df -h / | awk '{print $2}' | tail -n1 | sed 's/G//g' | sed 's/ //g') GB"
 echo -e " Used Storage        = $(df -h / | awk '{print $3}' | tail -n1 | sed 's/G//g' | sed 's/ //g') GB"
-echo -e ""
 echo -e "${CYAN}╒══════════════════════════════════════════════════╕${NC}"
 echo -e " \E[41;1;39m                 [ STATUS LAYANAN ]               \E[0m"
 echo -e "${CYAN}╘══════════════════════════════════════════════════╛${NC}"
-echo -e " ${green}•${NC} SSH / TUN          • $status_ssh"
-echo -e " ${green}•${NC} OVPN WS            • $swsovpn"
-echo -e " ${green}•${NC} DROPBEAR           • $status_beruangjatuh"
-echo -e " ${green}•${NC} VNSTAT             • $status_vnstat"
-echo -e " ${green}•${NC} WS STUNNEL         • $swstls"
-echo -e " ${green}•${NC} WS DROPBEAR        • $swsdrop"
-echo -e " ${green}•${NC} STUNNEL            • $status_stunnel"
-echo -e " ${green}•${NC} VMESS TLS          • $status_tls_v2ray"
-echo -e " ${green}•${NC} VMESS HTTP         • $status_nontls_v2ray"
-echo -e " ${green}•${NC} SSLH               • $sosslh"
-echo -e " ${green}•${NC} FAIL2BAN           • $status_fail2ban"
-echo -e " ${green}•${NC} OHP SSH            • $sohr"
-echo -e " ${green}•${NC} OHP DROPBEAR       • $sohp"
+echo -e " ${green}•${NC} SSH / TUN       • Ssh/Tun Service is $status_ssh"
+echo -e " ${green}•${NC} OVPN WS         • Ovpn Websocket Service is $swsovpn"
+echo -e " ${green}•${NC} DROPBEAR        • Dropbear Service is $status_beruangjatuh"
+echo -e " ${green}•${NC} VNSTAT          • Vnstat Service is $status_vnstat"
+echo -e " ${green}•${NC} WS STUNNEL      • Websocket TLS Service is $swstls"
+echo -e " ${green}•${NC} WS DROPBEAR     • Websocket NTLS Service is $swsdrop"
+echo -e " ${green}•${NC} STUNNEL         • Stunnel Service is $status_stunnel"
+echo -e " ${green}•${NC} VMESS TLS       • Vmess TLS Service is $status_tls_v2ray"
+echo -e " ${green}•${NC} VMESS HTTP      • Vmess NTLS Service is $status_nontls_v2ray"
+echo -e " ${green}•${NC} SSLH            • Sslh Service is $sosslh"
+echo -e " ${green}•${NC} FAIL2BAN        • Fail2ban Service is $status_fail2ban"
+echo -e " ${green}•${NC} OHP SSH         • OHP SSH Service is $sohr"
+echo -e " ${green}•${NC} OHP DROPBEAR    • OHP  Dropbear Service is $sohp"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e ""
 read -n 1 -s -r -p "Press Enter To Display Menu"
