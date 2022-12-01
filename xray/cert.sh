@@ -33,7 +33,7 @@ fi
 echo -e "[ ${green}INFO${NC} ] Starting renew cert... " 
 sleep 2
 /root/.acme.sh/acme.sh --set-default-ca --server letsencrypt
-/root/.acme.sh/acme.sh --issue -d $domain --standalone -k ec-256
+/root/.acme.sh/acme.sh --issue -d $domain --force --standalone -k ec-256
 ~/.acme.sh/acme.sh --installcert -d $domain --fullchainpath /etc/xray/xray.crt --keypath /etc/xray/xray.key --ecc
 echo -e "[ ${green}INFO${NC} ] Renew cert done... " 
 sleep 2
