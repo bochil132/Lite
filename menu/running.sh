@@ -272,16 +272,16 @@ fi
 
 # STATUS SERVICE SSHD
 if [[ $shd == "running" ]]; then 
-   shdd=" ${GREEN}Running ${NC}( No Error )${NC}" 
+   shdd=" ${GREEN}Running ${NC}" 
 else
-   shdd="${RED}  Not Running ${NC}  ( Error )${NC}"
+   shdd="${RED}  Not Running ${NC}"
 fi
 
 # STATUS SERVICE BADVPN
 if [[ $udp == "running" ]]; then 
-   udpw=" ${GREEN}Running ${NC}( No Error )${NC}" 
+   udpw=" ${GREEN}Running ${NC}" 
 else
-   udpw="${RED}  Not Running ${NC}  ( Error )${NC}"
+   udpw="${RED}  Not Running ${NC}"
 fi
 clear
 
@@ -312,21 +312,21 @@ echo -e " Used Storage        = $(df -h / | awk '{print $3}' | tail -n1 | sed 's
 echo -e "${CYAN}╒══════════════════════════════════════════════════╕${NC}"
 echo -e " \E[41;1;39m                 [ STATUS LAYANAN ]               \E[0m"
 echo -e "${CYAN}╘══════════════════════════════════════════════════╛${NC}"
-echo -e " ${green}•${NC} SSH / TUN       • Service is$status_ssh"
-echo -e " ${green}•${NC} OVPN WS         • Service is$swsovpn"
-echo -e " ${green}•${NC} DROPBEAR        • Service is$status_beruangjatuh"
-echo -e " ${green}•${NC} VNSTAT          • Service is$status_vnstat"
-echo -e " ${green}•${NC} WS STUNNEL      • Service is$swstls"
-echo -e " ${green}•${NC} WS DROPBEAR     • Service is$swsdrop"
-echo -e " ${green}•${NC} STUNNEL         • Service is$status_stunnel"
-echo -e " ${green}•${NC} VMESS TLS       • Service is$status_tls_v2ray"
-echo -e " ${green}•${NC} VMESS HTTP      • Service is$status_nontls_v2ray"
-echo -e " ${green}•${NC} SSLH            • Service is$sosslh"
-echo -e " ${green}•${NC} FAIL2BAN        • Service is$status_fail2ban"
-echo -e " ${green}•${NC} OHP SSH         • Service is$sohr"
-echo -e " ${green}•${NC} OHP DROPBEAR    • Service is$sohp"
-echo -e " ${green}•${NC} SSHD            • Service is$shdd"
-echo -e " ${green}•${NC} BADVPN UDPGW    • Service is$udpw"
+echo -e " ${green}•${NC} SSH / TUN    : Ssh/Tun Service is$status_ssh"
+echo -e " ${green}•${NC} OVPN WS      : OvpnWs Service is$swsovpn"
+echo -e " ${green}•${NC} DROPBEAR     : Dropbear Service is$status_beruangjatuh"
+echo -e " ${green}•${NC} VNSTAT       : Vnstat Service is$status_vnstat"
+echo -e " ${green}•${NC} WS STUNNEL   : Ws TLS Service is$swstls"
+echo -e " ${green}•${NC} WS DROPBEAR  : Ws HTTP Service is$swsdrop"
+echo -e " ${green}•${NC} STUNNEL      : Stunnel Service is$status_stunnel"
+echo -e " ${green}•${NC} VMESS TLS    : Vmess Tls Service is$status_tls_v2ray"
+echo -e " ${green}•${NC} VMESS HTTP   : Vmess Http Service is$status_nontls_v2ray"
+echo -e " ${green}•${NC} SSLH         : Sslh Service is$sosslh"
+echo -e " ${green}•${NC} FAIL2BAN     : Fail2ban Service is$status_fail2ban"
+echo -e " ${green}•${NC} OHP SSH      : OhpSSH Service is$sohr"
+echo -e " ${green}•${NC} OHP DROPBEAR : Ohp Dropbear Service is$sohp"
+echo -e " ${green}•${NC} SSHD         : Sshd Service is$shdd"
+echo -e " ${green}•${NC} BADVPN UDPGW : Badvpn Service is$udpw"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e ""
 read -n 1 -s -r -p "Press Enter To Display Menu"
