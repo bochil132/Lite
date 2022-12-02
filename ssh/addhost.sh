@@ -18,5 +18,8 @@ echo "$domain" > /var/lib/fsidvpn/ipvps.conf
 rm -rf /etc/xray/domain
 echo $domain > /etc/xray/domain
 certv2ray
-
+clear
+echo -e "${GREEN}Restart All Service${NC}"
+sleep 2
+restart
 
