@@ -46,6 +46,8 @@ cron_service=$(/etc/init.d/cron status | grep Active | awk '{print $3}' | cut -d
 fail2ban_service=$(/etc/init.d/fail2ban status | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 wstls=$(systemctl status ws-tls | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 wsdrop=$(systemctl status ws-nontls | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
+shd=$(systemctl status sshd | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
+udp=$(systemctl status rc-local | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 wsovpn=$(systemctl status ws-ovpn | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 #wsopen=$(systemctl status ws-openssh | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 osslh=$(systemctl status sslh | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
@@ -267,6 +269,20 @@ if [[ $wsopen == "running" ]]; then
 else
    swsopen="${RED}  Not Running ${NC}  ( Error )${NC}"
 fi
+
+# STATUS SERVICE SSHD
+if [[ $shd == "running" ]]; then 
+   shdd=" ${GREEN}Running ${NC}( No Error )${NC}" 
+else
+   shdd="${RED}  Not Running ${NC}  ( Error )${NC}"
+fi
+
+# STATUS SERVICE BADVPN
+if [[ $udp == "running" ]]; then 
+   udpw=" ${GREEN}Running ${NC}( No Error )${NC}" 
+else
+   udpw="${RED}  Not Running ${NC}  ( Error )${NC}"
+fi
 clear
 
 echo -e ""
@@ -309,6 +325,8 @@ echo -e " ${green}•${NC} SSLH            • Service is$sosslh"
 echo -e " ${green}•${NC} FAIL2BAN        • Service is$status_fail2ban"
 echo -e " ${green}•${NC} OHP SSH         • Service is$sohr"
 echo -e " ${green}•${NC} OHP DROPBEAR    • Service is$sohp"
+echo -e " ${green}•${NC} SSHD            • Service is$shdd"
+echo -e " ${green}•${NC} BADVPN UDPGW    • Service is$udpw"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e ""
 read -n 1 -s -r -p "Press Enter To Display Menu"
