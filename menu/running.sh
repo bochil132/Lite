@@ -49,6 +49,8 @@ wsdrop=$(systemctl status ws-nontls | grep Active | awk '{print $3}' | cut -d "(
 shd=$(systemctl status sshd | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 udp=$(systemctl status rc-local | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 wsovpn=$(systemctl status ws-ovpn | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
+cron=$(systemctl status cron | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
+sqd=$(systemctl status squid | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 #wsopen=$(systemctl status ws-openssh | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 osslh=$(systemctl status sslh | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 ohp=$(systemctl status dropbear-ohp | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
@@ -283,6 +285,20 @@ if [[ $udp == "running" ]]; then
 else
    udpw="${RED}  Not Running ${NC}"
 fi
+
+# STATUS SERVICE CRON
+if [[ $cron == "running" ]]; then 
+   cr=" ${GREEN}Running ${NC}" 
+else
+   cr="${RED}  Not Running ${NC}"
+fi
+
+# STATUS SERVICE SQUID
+if [[ $sqd == "running" ]]; then 
+   sq=" ${GREEN}Running ${NC}" 
+else
+   sq="${RED}  Not Running ${NC}"
+fi
 clear
 
 echo -e ""
@@ -327,6 +343,8 @@ echo -e " ${green}•${NC} OHP SSH      : OhpSSH Service is$sohr"
 echo -e " ${green}•${NC} OHP DROPBEAR : Ohp Dropbear Service is$sohp"
 echo -e " ${green}•${NC} SSHD         : Sshd Service is$shdd"
 echo -e " ${green}•${NC} BADVPN UDPGW : Badvpn Service is$udpw"
+echo -e " ${green}•${NC} CRONTAB      : Crontab Service is$cr"
+echo -e " ${green}•${NC} SQUID PROXY  : Squid Proxy Service is$sq"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e ""
 read -n 1 -s -r -p "Press Enter To Display Menu"
