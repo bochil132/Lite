@@ -30,9 +30,9 @@ clear
 
 domain=$(cat /etc/xray/domain)
 clear
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e "\E[41;1;39m            ⇱ CREATE SSH ACCOUNT ⇲           \E[0m"
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 read -p "$( echo -e " ${green}»${NC} Username : " )" Login
 read -p "$( echo -e " ${green}»${NC} Password : " )" Pass
 read -p "$( echo -e " ${green}»${NC} Expired : " )" masaaktif
