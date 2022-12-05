@@ -4,7 +4,7 @@
 # Color
 RED='\033[0;31m'
 NC='\033[0m'
-GREEN='\033[0;32m'
+green='\033[0;32m'
 ORANGE='\033[0;33m'
 BLUE='\033[0;34m'
 PURPLE='\033[0;35m'
@@ -35,7 +35,7 @@ echo -e "\E[41;1;39m            ⇱ CREATE SSH ACCOUNT ⇲           \E[0m"
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 read -p "$( echo -e " ${green}»${NC} Username : " )" Login
 read -p "$( echo -e " ${green}»${NC} Password : " )" Pass
-read -p "$( echo -e " ${green}»${NC} Expired : " " )" masaaktif
+read -p "$( echo -e " ${green}»${NC} Expired : " )" masaaktif
 
 IP=$(wget -qO- ipinfo.io/ip);
 ws="$(cat ~/log-install.txt | grep -w "Websocket TLS" | cut -d: -f2|sed 's/ //g')"
