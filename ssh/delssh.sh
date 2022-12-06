@@ -14,11 +14,18 @@ off='\x1b[m'
 # Getting
 
 clear
-read -p "Username SSH to Delete : " Pengguna
+read -p "Username : " user
+read -p "Alasan : " tos
 
-if getent passwd $Pengguna > /dev/null 2>&1; then
-        userdel $Pengguna
-        echo -e "Username $Pengguna Telah Di Hapus"
+if getent passwd $user > /dev/null 2>&1; then
+        userdel $user
+
+echo -e "====================================="
+echo -e "   Account SSH & OpenVPN Deleted"
+echo -e "====================================="
+echo -e "Username : $user"
+echo -e "Alasan : $tos"
+echo -e "====================================="
 else
-        echo -e "Failure: Username $Pengguna Tidak Ada"
+echo -e "Failure: Username $user Tidak Ada"
 fi
