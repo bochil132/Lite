@@ -49,9 +49,9 @@ cat>/etc/xray/vmess-$user-tls.json<<EOF
       "id": "${uuid}",
       "aid": "0",
       "net": "ws",
-      "path": "/waan",
+      "path": "/worryfree",
       "type": "none",
-      "host": "",
+      "host": "${domain}",
       "tls": "tls"
 }
 EOF
@@ -64,9 +64,9 @@ cat>/etc/xray/vmess-$user-nontls.json<<EOF
       "id": "${uuid}",
       "aid": "0",
       "net": "ws",
-      "path": "/waan",
+      "path": "/worryfree",
       "type": "none",
-      "host": "",
+      "host": "${domain}",
       "tls": "none"
 }
 EOF
@@ -80,30 +80,28 @@ systemctl restart xray.service
 service cron restart
 clear
 echo -e ""
-TEXT="
-======-XRAYS/VMESS-======
-Remarks : ${user}
-IP/Host : ${IP}
-Address : ${domain}
-Port TLS : ${tls}
-Port HTTP : ${nontls}
-User ID : ${uuid}
-Alter ID : 0
-Security : auto
-Network : ws
-Path : /worryfree
-Created : $hariini
-Expired : $exp
-=========================
-Link TLS : ${xrayv2ray1}
-=========================
-Link HTTP : ${xrayv2ray2}
-=========================
-"
-curl -s --max-time 10 -d "chat_id=1668998643&disable_web_page_preview=1&text=${TEXT}&parse_mode=html" https://api.telegram.org/bot5972770394:AAFz8aRmieB4Q3U_r3EuCg-NhjJSdiqsppA/sendMessage >/dev/null
-clear
-echo -e "[ ${GREEN}OKEY${NC} ] • Vmess Account Success Created"
-echo -e "[ ${RED}NOTE${NC} ] • Please Check Bot Telegram"
+echo -e "•──────────────────•"
+echo -e "🔰XRAY VMESS ACCOUNT🔰"
+echo -e "•──────────────────•"
+echo -e "Remarks : ${user}"
+echo -e "IP/Host : ${IP}"
+echo -e "Domain : ${domain}"
+echo -e "Port TLS : ${tls}"
+echo -e "Port HTTP : ${nontls}"
+echo -e "User ID : ${uuid}"
+echo -e "Alter ID : 0"
+echo -e "Scurity : Auto"
+echo -e "Network : Ws"
+echo -e "Path : /worryfree"
+echo -e "Created On : $hariini"
+echo -e "Expired On : $exp"
+echo -e "•──────────────────•"
+echo -e "Vmess Link TLS :"
+echo -e "${xrayv2ray1}"
+echo -e "•──────────────────•"
+echo -e "Vmess Link HTTP :"
+echo -e "${xrayv2ray2}"
+echo -e "•──────────────────•"
 echo -e ""
 read -n 1 -s -r -p "Press any key to back on menu"
 menu
