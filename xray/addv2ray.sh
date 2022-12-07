@@ -49,7 +49,7 @@ cat>/etc/xray/vmess-$user-tls.json<<EOF
       "id": "${uuid}",
       "aid": "0",
       "net": "ws",
-      "path": "/worryfree",
+      "path": "/waan",
       "type": "none",
       "host": "${domain}",
       "tls": "tls"
@@ -64,7 +64,7 @@ cat>/etc/xray/vmess-$user-nontls.json<<EOF
       "id": "${uuid}",
       "aid": "0",
       "net": "ws",
-      "path": "/worryfree",
+      "path": "/waan",
       "type": "none",
       "host": "${domain}",
       "tls": "none"
@@ -92,7 +92,7 @@ echo -e "User ID : ${uuid}"
 echo -e "Alter ID : 0"
 echo -e "Scurity : Auto"
 echo -e "Network : Ws"
-echo -e "Path : /worryfree"
+echo -e "Path : /waan"
 echo -e "Created On : $hariini"
 echo -e "Expired On : $exp"
 echo -e "•──────────────────•"
