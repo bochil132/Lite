@@ -36,9 +36,7 @@ do
         USER=`cat /tmp/login-db-pid.txt | awk '{print $10}'`;
         IP=`cat /tmp/login-db-pid.txt | awk '{print $12}'`;
         if [ $NUM -eq 1 ]; then
-                echo "----------------------------------------------";
-                echo "$PID - $USER - $IP";
-                echo "----------------------------------------------";
+                echo "$PID : $USER : $IP";
                 fi
 done
 echo " "
@@ -55,7 +53,7 @@ do
         USER=`cat /tmp/login-db-pid.txt | awk '{print $9}'`;
         IP=`cat /tmp/login-db-pid.txt | awk '{print $11}'`;
         if [ $NUM -eq 1 ]; then
-                echo "$PID - $USER - $IP";
+                echo "$PID : $USER : $IP";
         fi
 done
 if [ -f "/etc/openvpn/server/openvpn-tcp.log" ]; then
