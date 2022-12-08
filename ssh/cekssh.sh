@@ -36,7 +36,9 @@ do
         USER=`cat /tmp/login-db-pid.txt | awk '{print $10}'`;
         IP=`cat /tmp/login-db-pid.txt | awk '{print $12}'`;
         if [ $NUM -eq 1 ]; then
+                echo "----------------------------------------------";
                 echo "$PID - $USER - $IP";
+                echo "----------------------------------------------";
                 fi
 done
 echo " "
