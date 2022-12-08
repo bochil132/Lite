@@ -3,7 +3,7 @@
 # Color
 RED='\033[0;31m'
 NC='\033[0m'
-#GREEN='\033[0;32m'
+g='\033[0;32m'
 #ORANGE='\033[0;33m'
 BLUE='\033[0;34m'
 PURPLE='\033[0;35m'
@@ -36,7 +36,7 @@ do
         USER=`cat /tmp/login-db-pid.txt | awk '{print $10}'`;
         IP=`cat /tmp/login-db-pid.txt | awk '{print $12}'`;
         if [ $NUM -eq 1 ]; then
-                echo -e "${RED}$PID - $USER - $IP${NC}";
+                echo -e "$PID - ${g}$USER${NC} - $IP";
                 fi
 done
 echo " "
@@ -53,7 +53,7 @@ do
         USER=`cat /tmp/login-db-pid.txt | awk '{print $9}'`;
         IP=`cat /tmp/login-db-pid.txt | awk '{print $11}'`;
         if [ $NUM -eq 1 ]; then
-                echo "$PID : $USER : $IP";
+                echo -e "$PID - ${g}$USER${NC} - $IP";
         fi
 done
 if [ -f "/etc/openvpn/server/openvpn-tcp.log" ]; then
