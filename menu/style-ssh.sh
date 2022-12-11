@@ -392,9 +392,9 @@ clear
                then
 		    	:
                else
-               echo " Username   => $username
-                      Expired    => $tgl $bulantahun
-                      Deleted On => $hariini"
+echo -e "Username   => $username"
+echo -e "Expired    => $tgl $bulantahun"
+echo -e "Deleted On => $hariini"
                userdel $username
                fi
                done
