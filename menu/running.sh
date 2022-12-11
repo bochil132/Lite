@@ -51,6 +51,7 @@ udp=$(systemctl status rc-local | grep Active | awk '{print $3}' | cut -d "(" -f
 wsovpn=$(systemctl status ws-ovpn | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 cron=$(systemctl status cron | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 sqd=$(systemctl status squid | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
+nginx=$(systemctl status nginx | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 #wsopen=$(systemctl status ws-openssh | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 osslh=$(systemctl status sslh | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 ohp=$(systemctl status dropbear-ohp | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
@@ -299,6 +300,13 @@ if [[ $sqd == "running" ]]; then
 else
    sq="${RED}Offline [ Error ]${NC}"
 fi
+
+# STATUS SERVICE NGINX
+if [[ $nginx == "running" ]]; then 
+   nx="${GREEN}Online [ Aktif ]${NC}" 
+else
+   nx="${RED}Offline [ Error ]${NC}"
+fi
 clear
 
 echo -e ""
@@ -345,6 +353,7 @@ echo -e " ${green}•${NC} SSHD            => $shdd"
 echo -e " ${green}•${NC} BADVPN UDPGW    => $udpw"
 echo -e " ${green}•${NC} CRONTAB         => $cr"
 echo -e " ${green}•${NC} SQUID PROXY     => $sq"
+echo -e " ${green}•${NC} NGINX           => $nx"
 echo -e "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" | lolcat
 echo -e ""
 read -n 1 -s -r -p "Press Enter To Display Menu"
