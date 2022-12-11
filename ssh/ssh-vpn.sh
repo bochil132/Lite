@@ -388,22 +388,12 @@ netfilter-persistent reload
 
 # download script
 cd /usr/bin
-wget -O addhost "https://${akbarvpn}/addhost.sh"
-wget -O about "https://${akbarvpn}/about.sh"
 wget -O stat "https://${akbarvpn}/stat.sh"
 wget -O banner "https://${akbarvpn}/banner.sh"
 wget -O menu "https://autosc.mybochil.me/menu/menu.sh"
-wget -O addssh "https://${akbarvpn}/addssh.sh"
-wget -O trialssh "https://${akbarvpn}/trialssh.sh"
-wget -O delssh "https://${akbarvpn}/delssh.sh"
-wget -O member "https://${akbarvpn}/member.sh"
-wget -O delexp "https://${akbarvpn}/delexp.sh"
-wget -O cekssh "https://${akbarvpn}/cekssh.sh"
-wget -O restart "https://${akbarvpn}/restart.sh"
 wget -O speedtest "https://${akbarvpn}/speedtest_cli.py"
 wget -O info "https://${akbarvpn}/info.sh"
 wget -O ram "https://${akbarvpn}/ram.sh"
-wget -O renewssh "https://${akbarvpn}/renewssh.sh"
 wget -O tendang "https://${akbarvpn}/tendang.sh"
 wget -O clearlog "https://${akbarvpn}/clearlog.sh"
 wget -O portovpn "https://${akbarvpn}/portovpn.sh"
@@ -412,56 +402,37 @@ wget -O portvlm "https://${akbarvpn}/portvlm.sh"
 wget -O wbmn "https://${akbarvpn}/webmin.sh"
 wget -O xp "https://${akbarvpn}/xp.sh"
 wget -O swapkvm "https://${akbarvpn}/swapkvm.sh"
-wget -O addvmess "https://${akbarvpnn}/addv2ray.sh"
-wget -O delvmess "https://${akbarvpnn}/delv2ray.sh"
-wget -O cekvmess "https://${akbarvpnn}/cekv2ray.sh"
-wget -O renewvmess "https://${akbarvpnn}/renewv2ray.sh"
-wget -O certv2ray "https://${akbarvpnn}/certv2ray.sh"
 wget -O portsshnontls "https://autosc.mybochil.me/python/portsshnontls.sh"
 wget -O portsshws "https://autosc.mybochil.me/python/portsshws.sh"
 
-wget -O system "https://autosc.mybochil.me/menu/system.sh"
 wget -O bannerku "https://autosc.mybochil.me/menu/bannerku"
-wget -O running "https://autosc.mybochil.me/menu/running.sh"
 wget -O cloudflare-pointing "https://autosc.mybochil.me/menu/cloudflare-pointing.sh"
 wget -O cloudflare-setting "https://autosc.mybochil.me/menu/cloudflare-setting.sh"
 wget -O ins-xray "https://autosc.mybochil.me/xray/ins-xray.sh"
+wget -O style-ssh "https://autosc.mybochil.me/menu/style-ssh.sh"
+wget -O style-vmess "https://autosc.mybochil.me/menu/style-vmess.sh"
+wget -O style-bw "https://autosc.mybochil.me/menu/style-bw.sh"
 chmod +x portsshnontls
 chmod +x portsshws
 chmod +x cloudflare-pointing
 chmod +x cloudflare-setting
 chmod +x banner
 chmod +x stat
-chmod +x system
-chmod +x bannerku
-chmod +x addhost
-chmod +x menu
-chmod +x addssh
-chmod +x trialssh
-chmod +x delssh
-chmod +x member
-chmod +x delexp
-chmod +x cekssh
-chmod +x restart
 chmod +x speedtest
 chmod +x info
-chmod +x about
 chmod +x tendang
 chmod +x ram
-chmod +x renewssh
 chmod +x clearlog
 chmod +x portovpn
 chmod +x portsquid
 chmod +x portvlm
 chmod +x wbmn
+chmod +x menu
 chmod +x xp
+chmod +x style-vmess
+chmod +x style-ssh
+chmod +x style-bw
 chmod +x swapkvm
-chmod +x addvmess
-chmod +x delvmess
-chmod +x cekvmess
-chmod +x renewvmess
-chmod +x certv2ray
-chmod +x running
 chmod +x ins-xray
 
 echo "0 5 * * * root clearlog && reboot" >> /etc/crontab
