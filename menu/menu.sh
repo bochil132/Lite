@@ -484,8 +484,9 @@ menu
 
 echo -e ""
 clear
-data=$(curl -sS https://raw.githubusercontent.com/bochil132/permission/main/ipmini | grep $MYIP | awk '{print $3}')
-name=$(curl -sS https://raw.githubusercontent.com/bochil132/permission/main/ipmini | grep $MYIP | awk '{print $2}')
+ipnya=$(curl -sS ipv4.icanhazip.com)
+data=$(curl -sS https://raw.githubusercontent.com/bochil132/permission/main/ipmini | grep $ipnya | awk '{print $3}')
+name=$(curl -sS https://raw.githubusercontent.com/bochil132/permission/main/ipmini | grep $ipnya | awk '{print $2}')
 up="$(uptime -p | cut -d " " -f 2-10)"
 cpu=$( awk -F: '/model name/ {name=$2} END {print name}' /proc/cpuinfo )
 core=$( awk -F: '/model name/ {core++} END {print core}' /proc/cpuinfo )
