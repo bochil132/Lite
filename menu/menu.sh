@@ -522,7 +522,12 @@ echo -e " ${R}10.${nc} Reboot VPS"
 echo -e " ${R}11.${nc} About"
 echo -e " ${R}12.${nc} Update Script"
 echo -e "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" | lolcat
-echo -e "  Type ${R}X${nc} to exit ${G}menu${nc}"
+echo -e " Base ${G}Official${NC} Script By ${C}@Horass${nc}"
+echo -e " ${G}Modded${nc} And Update By ${C}@WanEuy${nc}"
+echo -e "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" | lolcat
+echo -e " ${P}Enjoy The Access Premium Autoscript${nc} ${G}SSH & VMESS${nc}"
+echo -e " Pengguna Script ${G}=>${nc} $name"
+echo -e " Expired Script  ${G}=>${nc} $data"
 echo -e "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" | lolcat
 echo -e ""
  read -p " Select 1 - 10 or X => " menu
