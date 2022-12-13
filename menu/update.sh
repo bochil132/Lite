@@ -9,6 +9,8 @@ echo -e "-------------------------------" | lolcat
 echo -e "Done Update All Menu Script.!!"
 echo -e "-------------------------------" | lolcat
 echo -e "Type [ menu ] to continue"
+echo -e ""
+echo -e ""
 sleep 2
 rm -rf update.sh
 
