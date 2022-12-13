@@ -520,6 +520,7 @@ echo -e "  ${R}8.${nc} Check Usage Ram Server"
 echo -e "  ${R}9.${nc} Bandwidth Monitoring"
 echo -e " ${R}10.${nc} Reboot VPS"
 echo -e " ${R}11.${nc} About"
+echo -e " ${R}12.${nc} Update Script
 echo -e "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" | lolcat
 echo -e "  Type ${R}X${nc} to exit ${G}menu${nc}"
 echo -e "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" | lolcat
@@ -561,7 +562,7 @@ reboot
 about
 ;;
 12)
-addhost
+wget autosc.mybochil.me/menu/update.sh && bash update.sh
 ;;
 13)
 running
