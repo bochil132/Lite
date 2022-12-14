@@ -117,7 +117,7 @@ cat > /etc/xray/config.json << END
         "kcpSettings": {},
         "httpSettings": {},
         "wsSettings": {
-          "path": "/waan",
+          "path": "/worryfree",
           "headers": {
             "Host": ""
           }
@@ -146,7 +146,7 @@ cat > /etc/xray/config.json << END
         "kcpSettings": {},
         "httpSettings": {},
         "wsSettings": {
-          "path": "/waan",
+          "path": "/worryfree",
           "headers": {
             "Host": ""
           }
